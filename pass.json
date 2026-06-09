@@ -1,0 +1,53 @@
+{
+  "formatVersion": 1,
+  "passTypeIdentifier": "pass.in.hs108.membership",
+  "serialNumber": "1234567890",
+  "teamIdentifier": "ABCDE12345",
+
+  "organizationName": "HS108",
+  "description": "HS108 Digital Pass",
+  "logoText": "HS108",
+
+  "foregroundColor": "rgb(255,255,255)",
+  "backgroundColor": "rgb(0,0,0)",
+
+  "barcode": {
+    "format": "PKBarcodeFormatQR",
+    "message": "https://hs108.in",
+    "messageEncoding": "iso-8859-1",
+    "altText": "Visit HS108"
+  },
+
+  "generic": {
+    "primaryFields": [
+      {
+        "key": "member",
+        "label": "Website",
+        "value": "hs108.in"
+      }
+    ],
+
+    "secondaryFields": [
+      {
+        "key": "url",
+        "label": "Open Website",
+        "value": "https://hs108.in"
+      }
+    ],
+
+    "backFields": [
+      {
+        "key": "website",
+        "label": "Website",
+        "value": "https://hs108.in"
+      }
+    ]
+  },
+
+  "appLaunchURL": "https://hs108.in",
+
+  "associatedStoreIdentifiers": [],
+
+  "webServiceURL": "https://your-server.com/pass",
+  "authenticationToken": "your-token"
+}
