@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HS108 Wallet Pass</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-neutral-950 text-white min-h-screen flex items-center justify-center">
+
+    <div class="max-w-md w-full mx-auto p-8">
+
+        <div class="bg-neutral-900 rounded-3xl border border-neutral-800 p-8 shadow-xl">
+
+            <div class="text-center">
+
+                <h1 class="text-4xl font-bold tracking-tight">
+                    HS108
+                </h1>
+
+                <p class="mt-3 text-neutral-400">
+                    Add your digital pass to Apple Wallet
+                </p>
+
+                <div class="mt-8">
+                    <img
+                        class="mx-auto rounded-xl"
+                        src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://hs108.in"
+                        alt="HS108 QR Code">
+                </div>
+
+                <div class="mt-8">
+
+                    <!-- Apple Wallet Button -->
+                    <a
+                        id="walletButton"
+                        href="/passes/hs108.pkpass"
+                        class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white text-black font-semibold hover:opacity-90 transition">
+
+                        Add to Apple Wallet
+
+                    </a>
+
+                </div>
+
+                <div
+                    id="deviceMessage"
+                    class="mt-4 text-sm text-neutral-500 hidden">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<script>
+const isiOS =
+    /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+const walletButton = document.getElementById("walletButton");
+const deviceMessage = document.getElementById("deviceMessage");
+
+if (!isiOS) {
+    deviceMessage.textContent =
+        "Apple Wallet is available on iPhone and iPad.";
+    deviceMessage.classList.remove("hidden");
+}
+
+walletButton.addEventListener("click", (event) => {
+    console.log("Opening Wallet Pass");
+});
+</script>
+
+</body>
+</html>
